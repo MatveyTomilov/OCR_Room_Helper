@@ -1,0 +1,47 @@
+﻿<Application x:Class="AbyssOverlay.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             ShutdownMode="OnMainWindowClose">
+    <Application.Resources>
+        <Color x:Key="OverlayBgColor">#C01A1F24</Color>
+        <Color x:Key="OverlayBgStrongColor">#E01A1F24</Color>
+        <Color x:Key="OverlayBorderColor">#55BFF8F3</Color>
+        <Color x:Key="OverlayAccentColor">#FF3EEAF4</Color>
+        <Color x:Key="OverlayTextColor">#E6FFFFFF</Color>
+        <Color x:Key="OverlayMutedColor">#99C7D1</Color>
+
+        <SolidColorBrush x:Key="OverlayBg" Color="{StaticResource OverlayBgColor}"/>
+        <SolidColorBrush x:Key="OverlayBgStrong" Color="{StaticResource OverlayBgStrongColor}"/>
+        <SolidColorBrush x:Key="OverlayBorder" Color="{StaticResource OverlayBorderColor}"/>
+        <SolidColorBrush x:Key="OverlayAccent" Color="{StaticResource OverlayAccentColor}"/>
+        <SolidColorBrush x:Key="OverlayText" Color="{StaticResource OverlayTextColor}"/>
+        <SolidColorBrush x:Key="OverlayMuted" Color="{StaticResource OverlayMutedColor}"/>
+
+        <DropShadowEffect x:Key="OverlayShadow"
+                          Color="#000000"
+                          BlurRadius="20"
+                          ShadowDepth="6"
+                          Opacity="0.45"/>
+
+        <Style x:Key="OverlayButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource OverlayBgStrong}"/>
+            <Setter Property="Foreground" Value="{StaticResource OverlayText}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource OverlayBorder}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="10,6"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="12">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Application.Resources>
+</Application>
